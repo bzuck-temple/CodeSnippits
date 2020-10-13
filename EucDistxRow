@@ -1,0 +1,12 @@
+distfun_out4 <- function(x){  
+   distfun <- NULL  
+   for (i in 1:length(x)) {  
+       distfun[i] <- sqrt(sum((x[i]-x[i-1]) ^ 2))  
+   }  
+     return(distfun)  
+  }  
+  
+distfun_out4(test_df$col_one)  
+  
+test_df <- test_df %>%   
+    mutate(eucCol_one = distfun_out4(col_one))  
